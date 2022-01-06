@@ -13,17 +13,20 @@ try {
   }
 
   node {
+    unstash 'sources'
     stage("Maven Build") {
+      sh "ls -ltr"
       echo "hello"
     }
   }
 
   node {
     stage("Docker Build") {
+      sh "ls -ltr"
       echo "hello"
     }
   }
- 
+  
   node {
     stage("Print Hello") {
       echo "hello"
