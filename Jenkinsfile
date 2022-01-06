@@ -13,7 +13,7 @@ try {
   }
 
   node {
-    unstash 'sources'      
+    unstash name:'sources'      
     stage("Maven Build") {
       sh "ls -ltr"
       echo "hello"
@@ -22,7 +22,7 @@ try {
 
   node {
     stage("Docker Build") {
-      sh "ls -ltr"
+//      sh "ls -ltr"
       echo "hello"
     }
   }
