@@ -13,7 +13,7 @@ try {
   }
 
   node {
-    unstash name:'sources'      
+//    unstash name:'sources'      
     stage("Maven Build") {
       sh "ls -ltr"
       echo "hello"
