@@ -1,3 +1,4 @@
+@Library('jenkins-library@main') _
 // DO NOT Modify this file
 properties([
   [$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '20']
@@ -7,7 +8,9 @@ properties([
 try {
   node {
     stage("Checkout Code") {
-      checkout scm //checking out code
+//      checkout scm //checking out code
+      checkoutRepo {
+      }
       stash name:'sources', useDefaultExcludes: false
     }
   }
